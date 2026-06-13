@@ -4,6 +4,57 @@
    ========================================================= */
 window.CASE_DATA = {
 
+  /* ---- 4 ВІТРИННІ (демо) кейси для розкішних карток ---- */
+  stomatologia: {
+    demo: true, icon: "i-tooth", accent: "#22C55E",
+    niche: "Стоматологія", geo: "Київ", tag: "Бюджет 45 000 грн/міс",
+    title: "Знизили ціну ліда зі 680₴ до 290₴ за 30 днів",
+    metrics: [{ v: "-57%", l: "ціна ліда" }, { v: "680→290₴", l: "за лід" }, { v: "18 700₴", l: "економія/міс" }],
+    detail: {
+      lead: "Власник думав, що реклама не працює. Аудит показав, що проблема — у налаштуваннях: широкі ключі, відсутність мінус-слів і некоректне відстеження конверсій.",
+      ba: [{ l: "Ціна ліда", b: "680₴", a: "290₴" }, { l: "Заявок/міс", b: "28", a: "46" }, { l: "CTR", b: "1,2%", a: "3,4%" }],
+      blocks: [{ h: "Що зробили", items: ["Зібрали семантику та мінус-слова", "Розділили кампанії по послугах", "Оптимізували PMax і пошук", "Налаштували точне відстеження конверсій"] }],
+      conclusion: "Економія 18 700 грн/міс при тому ж бюджеті. Ціна ліда впала на 57%."
+    }
+  },
+  ecommerce: {
+    demo: true, icon: "i-bag", accent: "#A855F7",
+    niche: "E-commerce", geo: "Одяг", tag: "Бюджет 80 000 грн/міс",
+    title: "Підняли ROAS зі 180% до 340%",
+    metrics: [{ v: "+160%", l: "ROAS" }, { v: "180→340%", l: "ROAS" }, { v: "+22 000₴", l: "обороту/міс" }],
+    detail: {
+      lead: "Одна кампанія просувала всі категорії, Google оптимізувався на кліки, конверсії передавались з помилками.",
+      ba: [{ l: "ROAS", b: "180%", a: "340%" }, { l: "Ціна продажу", b: "640₴", a: "395₴" }, { l: "CTR", b: "0,9%", a: "2,1%" }],
+      blocks: [{ h: "Що зробили", items: ["Сегментували PMax по марджі", "Налаштували фід і пріоритети", "Списки виключень і мінус-слова", "Коректний e-commerce tracking"] }],
+      conclusion: "+22 000 грн/міс додаткового обороту. Продажі ростуть стабільно щотижня."
+    }
+  },
+  legal: {
+    demo: true, icon: "i-scale", accent: "#F5A623",
+    niche: "Юридичні послуги", geo: "Київ", tag: "Бюджет 25 000 грн/міс",
+    title: "Підняли заявки із 28 до 46 на місяць",
+    metrics: [{ v: "+65%", l: "заявок" }, { v: "28→46", l: "заявок/міс" }, { v: "-39%", l: "ціна заявки" }],
+    detail: {
+      lead: "Усі послуги в одній кампанії, загальні запити без уточнень, дзвінки не рахувались як конверсії.",
+      ba: [{ l: "Заявок/міс", b: "28", a: "46" }, { l: "Ціна заявки", b: "890₴", a: "540₴" }, { l: "CTR", b: "1,8%", a: "4,3%" }],
+      blocks: [{ h: "Що зробили", items: ["Розбили кампанії по практиках права", "Зібрали цільову семантику з намірами", "Додали мінус-слова і гео-уточнення", "Підключили відстеження дзвінків"] }],
+      conclusion: "+65% заявок при тому ж бюджеті. Заявки пішли вже на другий день."
+    }
+  },
+  medical: {
+    demo: true, icon: "i-cross-med", accent: "#A855F7",
+    niche: "Медичний центр", geo: "Київ", tag: "Бюджет 60 000 грн/міс",
+    title: "Знизили ціну запису з 1200₴ до 480₴",
+    metrics: [{ v: "-60%", l: "ціна запису" }, { v: "1200→480₴", l: "за запис" }, { v: "×2.5", l: "дешевше" }],
+    detail: {
+      lead: "Партнерська мережа з'їдала бюджет, загальні запити, записи рахувались некоректно, один лендінг на всі напрями.",
+      ba: [{ l: "Ціна запису", b: "1200₴", a: "480₴" }, { l: "Записів/міс", b: "50", a: "109" }, { l: "CTR", b: "1,1%", a: "2,3%" }],
+      blocks: [{ h: "Що зробили", items: ["Вимкнули партнерську мережу", "Розбили кампанії по напрямах", "Мінус-слова і точне гео", "Відстеження записів + релевантні сторінки"] }],
+      conclusion: "Ціна запису впала в 2.5 рази за 3 тижні. Тепер кожна гривня працює на результат."
+    }
+  },
+
+
   hostels: {
     icon: "i-calendar", accent: "#60A5FF",
     niche: "Мережа хостелів", geo: "Київ", tag: "Google Search",
@@ -355,7 +406,8 @@ window.CASE_DATA = {
     var grid=document.getElementById("rcGrid");
     var data=window.CASE_DATA||{};
     if(grid){
-      grid.innerHTML=Object.keys(data).map(function(id){return cardHTML(id,data[id]);}).join("");
+      // у "Дивитись більше" показуємо лише реальні кейси (без demo)
+      grid.innerHTML=Object.keys(data).filter(function(id){return !data[id].demo;}).map(function(id){return cardHTML(id,data[id]);}).join("");
     }
     modal=document.getElementById("rcModal");
     body=document.getElementById("rcModalBody");
@@ -370,6 +422,18 @@ window.CASE_DATA = {
       var obs=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.style.opacity="1";en.target.style.transform="none";obs.unobserve(en.target);}});},{threshold:.08});
       grid.querySelectorAll(".rc-card").forEach(function(el){el.style.opacity="0";el.style.transform="translateY(18px)";el.style.transition="opacity .5s ease, transform .5s ease";obs.observe(el);});
     }
+    // "Дивитись більше кейсів" — розкрити реальні кейси
+    var moreOpen=false;
+    window.toggleMoreCases=function(){
+      moreOpen=!moreOpen;
+      if(grid){
+        grid.style.display=moreOpen?"grid":"none";
+        if(moreOpen) grid.querySelectorAll(".rc-card").forEach(function(el){el.style.opacity="1";el.style.transform="none";});
+      }
+      var b=document.getElementById("moreCasesBtn"), t=document.getElementById("moreCasesTxt");
+      if(t) t.textContent=moreOpen?"Згорнути кейси":"Дивитись більше кейсів — ще 8 реальних";
+      if(b) b.classList.toggle("open",moreOpen);
+    };
   }
   if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",init);}else{init();}
 })();
