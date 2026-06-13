@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Швидкий аудит Google Ads — 5 критичних помилок які зїдають до 40% бюджету. Відео-розбір за 20 хвилин.">
+<title>Аудит Google Ads — 5 критичних помилок | Спеціаліст з 10-річним досвідом</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Unbounded:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ambient floating glow orbs (depth) -->
+<div class="bg-orbs" aria-hidden="true"><span class="orb o1"></span><span class="orb o2"></span><span class="orb o3"></span></div>
+
+<!-- ================= SVG ICON LIBRARY (line icons + Google Ads logo) ================= -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="gads" viewBox="0 0 64 64">
+    <rect x="26" y="4" width="14" height="44" rx="7" transform="rotate(-30 33 26)" fill="#FBBC04"/>
+    <rect x="26" y="16" width="14" height="44" rx="7" transform="rotate(30 33 38)" fill="#4285F4"/>
+    <circle cx="20.5" cy="49" r="8.5" fill="#34A853"/>
+  </symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.6" class="solid"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M9 7V5h6v2"/><path d="M6 7l1 13h10l1-13"/><path d="M10 11v6M14 11v6"/></symbol>
+  <symbol id="i-robot" viewBox="0 0 24 24"><rect x="5" y="8" width="14" height="11" rx="2.5"/><path d="M12 4.5v3.5"/><circle cx="12" cy="4" r="1.1" class="solid"/><circle cx="9.5" cy="13" r="1.2" class="solid"/><circle cx="14.5" cy="13" r="1.2" class="solid"/><path d="M9.5 16.5h5"/></symbol>
+  <symbol id="i-network" viewBox="0 0 24 24"><circle cx="12" cy="6" r="2.4"/><circle cx="6" cy="18" r="2.4"/><circle cx="18" cy="18" r="2.4"/><path d="M10.6 7.8 7.2 15.8M13.4 7.8 16.8 15.8"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4 2.6 20h18.8z"/><path d="M12 10v4.5"/><circle cx="12" cy="17.4" r="0.7" class="solid"/></symbol>
+  <symbol id="i-fix" viewBox="0 0 24 24"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9.5 4h5v2.5h-5z"/><path d="M9 11l1.4 1.4L13 10M9 16l1.4 1.4L13 15"/></symbol>
+  <symbol id="i-film" viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="12" rx="2.5"/><path d="M10.5 9.5l4.5 2.5-4.5 2.5z" class="solid"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M10 12h5M10 15.5h5M10 19h3"/></symbol>
+  <symbol id="i-money" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v10"/><path d="M14.5 9.3C14 8.4 13 8 12 8c-1.6 0-2.6.8-2.6 2s1 1.7 2.6 2 2.6.9 2.6 2-1 2-2.6 2c-1 0-2-.4-2.5-1.2"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 6c-1.6-1-4-1.4-6-1.4V18c2 0 4.4.4 6 1.4 1.6-1 4-1.4 6-1.4V4.6c-2 0-4.4.4-6 1.4z"/><path d="M12 6v13.4"/></symbol>
+  <symbol id="i-table" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M4 9.5h16M4 14.5h16M9.5 5v14M14.5 5v14"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 4v16h16"/><path d="M7.5 15.5l3.5-4.5 3 2.5 4.5-6"/></symbol>
+  <symbol id="i-trendup" viewBox="0 0 24 24"><path d="M3 17l5.5-5.5 3.5 3.5L21 6"/><path d="M16 6h5v5"/></symbol>
+  <symbol id="i-trenddown" viewBox="0 0 24 24"><path d="M3 7l5.5 5.5 3.5-3.5L21 18"/><path d="M16 18h5v-5"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19.5a5.5 5.5 0 0 1 11 0"/><path d="M16 5.2a3.2 3.2 0 0 1 0 5.6"/><path d="M17.5 14.2a5.5 5.5 0 0 1 3 5.3"/></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M5 17.5l4.5-4 3 3 3-3 4.5 4"/></symbol>
+  <symbol id="i-strategy" viewBox="0 0 24 24"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><path d="M7.5 7.5l9 9M16.5 7.5l-9 9"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M21 4 3 11l6 2.2L11 20l3.5-4.2z"/><path d="M21 4 9 13.2"/></symbol>
+  <symbol id="i-telegram" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm5.6 7.6-1.86 8.78c-.14.62-.5.77-1.02.48l-2.82-2.08-1.36 1.31c-.15.15-.28.28-.56.28l.2-2.86 5.2-4.7c.23-.2-.05-.31-.35-.11L8.4 13.06l-2.77-.87c-.6-.19-.62-.6.13-.89l10.83-4.18c.5-.18.94.12.78.88z"/></symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="2.8" y="2.8" width="18.4" height="18.4" rx="5.2"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.3" cy="6.7" r="1.15" class="solid"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2.5"/><path d="M8 10V7.5a4 4 0 0 1 8 0V10"/><circle cx="12" cy="15" r="1.3" class="solid"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.6-4.6"/></symbol>
+  <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M5 14c-1.5 1.5-2 5-2 5s3.5-.5 5-2"/><path d="M14 4c4 1 6 5 5 11l-4 3-5-5 3-4c1-2 0-4 1-5z"/><circle cx="14.5" cy="9.5" r="1.4"/></symbol>
+  <symbol id="i-gift" viewBox="0 0 24 24"><rect x="4" y="9" width="16" height="11" rx="1.5"/><path d="M4 13h16M12 9v11"/><path d="M12 9C11.5 6.5 10 5 8.5 5.5S9.5 9 12 9zM12 9c.5-2.5 2-4 3.5-3.5S14.5 9 12 9z"/></symbol>
+  <symbol id="i-headset" viewBox="0 0 24 24"><path d="M5 13v-1a7 7 0 0 1 14 0v1"/><rect x="3.5" y="13" width="3.5" height="6" rx="1.5"/><rect x="17" y="13" width="3.5" height="6" rx="1.5"/><path d="M19 18.5c0 2-2 3.5-4 3.5h-2"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3 12V5a2 2 0 0 1 2-2h7l9 9-9 9z"/><circle cx="8" cy="8" r="1.3" class="solid"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 9.5h16M8.5 3v4M15.5 3v4"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3 5 13.5h6l-1 7.5 8-10.5h-6z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+  <symbol id="i-tooth" viewBox="0 0 24 24"><path d="M7 4c-2 0-3.5 1.6-3.5 4 0 3 1 4 1.5 7s.5 5 1.8 5 1.2-3 2.2-3 1 3 2.2 3 1.3-2 1.8-5 1.5-4 1.5-7c0-2.4-1.5-4-3.5-4-1.3 0-1.7.8-3 .8S8.3 4 7 4z"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 4v16M7 20h10"/><path d="M12 6 5 8l-2.5 5a3 3 0 0 0 6 0L7 8"/><path d="M12 6l7 2 2.5 5a3 3 0 0 1-6 0L17 8"/></symbol>
+  <symbol id="i-cross-med" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M12 8v8M8 12h8"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4 3 7.5 7 9 4-1.5 7-5 7-9V6z"/><path d="M9 12l2 2 4-4"/></symbol>
+</defs></svg>
+
+<!-- ============ NAV ============ -->
+<nav>
+  <div class="nav-logo"><span class="dot"></span>google_ads_specialist</div>
+  <a href="#pricing" class="nav-cta">Замовити аудит</a>
+</nav>
+
+<!-- ============ DISCOUNT BAR ============ -->
+<div class="promo-bar">
+  <div class="promo-inner">
+    <span class="promo-tag"><svg class="i"><use href="#i-bolt"/></svg> Спецціна</span>
+    <span class="promo-text"><strong>499 грн</strong> замість <s>2 000 грн</s> — діє ще:</span>
+    <div class="promo-timer">
+      <div class="pt-block"><span class="pt-num" id="th">00</span><span class="pt-lbl">год</span></div>
+      <span class="pt-sep">:</span>
+      <div class="pt-block"><span class="pt-num" id="tm">00</span><span class="pt-lbl">хв</span></div>
+      <span class="pt-sep">:</span>
+      <div class="pt-block"><span class="pt-num" id="ts">00</span><span class="pt-lbl">сек</span></div>
+    </div>
+    <a href="#pricing" class="promo-btn">Забрати знижку →</a>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <h1 class="hero-h1">Вже сьогодні <span class="grad-blue">перестаньте зливати кошти на вітер,</span> в <span class="g-wordmark"><span style="color:#4285F4">G</span><span style="color:#EA4335">o</span><span style="color:#FBBC04">o</span><span style="color:#4285F4">g</span><span style="color:#34A853">l</span><span style="color:#EA4335">e</span></span> <span class="t-blue">Ads</span></h1>
+        <p class="hero-sub">Кожен день без аудиту — це день коли Google витрачає ваші гроші на <strong class="t-blue">нецільовий трафік</strong> і <strong class="t-blue">неефективні кампанії</strong>.</p>
+
+        <div class="hero-features">
+          <div class="hf-chip">
+            <div class="hf-ic blue"><svg class="i"><use href="#i-target"/></svg></div>
+            <div class="hf-body"><b>Виявляємо проблеми</b><span>що зливають ваш бюджет</span></div>
+          </div>
+          <div class="hf-chip">
+            <div class="hf-ic purple"><svg class="i"><use href="#i-search"/></svg></div>
+            <div class="hf-body"><b>Показуємо рішення</b><span>і точки швидкого зростання</span></div>
+          </div>
+          <div class="hf-chip">
+            <div class="hf-ic green"><svg class="i"><use href="#i-money"/></svg></div>
+            <div class="hf-body"><b>Оптимізуємо бюджет</b><span>щоб кожна гривня працювала на вас</span></div>
+          </div>
+          <div class="hf-chip">
+            <div class="hf-ic amber"><svg class="i"><use href="#i-trendup"/></svg></div>
+            <div class="hf-body"><b>Збільшуємо результати</b><span>конверсій більше, ціна ліда нижча</span></div>
+          </div>
+        </div>
+
+        <div class="hero-ctas">
+          <a href="https://t.me/YOUR_TELEGRAM" class="hero-cta tg" target="_blank" rel="noopener">
+            <span class="hc-ic"><svg class="i"><use href="#i-telegram"/></svg></span>
+            <span class="hc-txt"><b>Написати в Telegram</b><span>Отримати аудит за 20 хвилин</span></span>
+            <span class="hc-arrow">›</span>
+          </a>
+          <a href="https://instagram.com/YOUR_INSTAGRAM" class="hero-cta ig" target="_blank" rel="noopener">
+            <span class="hc-ic ig-ic"><svg class="i"><use href="#i-instagram"/></svg></span>
+            <span class="hc-txt"><b>Instagram DM</b><span>Швидкий зв'язок</span></span>
+            <span class="hc-arrow">›</span>
+          </a>
+        </div>
+
+        <div class="hero-trust">
+          <div class="ti"><svg><use href="#i-shield"/></svg> Вартість — <span class="am">&nbsp;499 грн</span></div>
+          <div class="ti"><svg><use href="#i-clock"/></svg> Відповідь протягом години</div>
+          <div class="ti"><svg><use href="#i-lock"/></svg> Конфіденційність 100%</div>
+        </div>
+      </div>
+
+      <!-- Права частина: 3D-ілюстрація (assets/hero-art.png) + неонові картки -->
+      <div class="hero-art">
+        <div class="halo"></div>
+        <img class="hero-img" src="assets/hero-art.png" alt="Google Ads аудит"
+             onerror="this.style.display='none';this.parentNode.classList.add('no-img');">
+        <!-- Fallback-композиція, якщо немає assets/hero-art.png -->
+        <div class="hero-art-fallback">
+          <svg class="ha-ads" viewBox="0 0 64 64" aria-hidden="true"><use href="#gads"/></svg>
+          <div class="ha-dash">
+            <div class="ha-dash-top"><span></span><span></span><span></span></div>
+            <svg class="ha-chart" viewBox="0 0 260 130" preserveAspectRatio="none">
+              <defs><linearGradient id="haG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#34D399" stop-opacity=".4"/><stop offset="1" stop-color="#34D399" stop-opacity="0"/></linearGradient></defs>
+              <g fill="rgba(96,165,255,.3)"><rect x="14" y="86" width="18" height="40" rx="3"/><rect x="44" y="74" width="18" height="52" rx="3"/><rect x="74" y="80" width="18" height="46" rx="3"/><rect x="104" y="58" width="18" height="68" rx="3"/><rect x="134" y="64" width="18" height="62" rx="3"/><rect x="164" y="40" width="18" height="86" rx="3"/><rect x="194" y="46" width="18" height="80" rx="3"/><rect x="224" y="22" width="18" height="104" rx="3"/></g>
+              <polygon points="10,92 50,82 90,86 130,60 170,44 210,40 250,16 250,130 10,130" fill="url(#haG)"/>
+              <polyline points="10,92 50,82 90,86 130,60 170,44 210,40 250,16" fill="none" stroke="#34D399" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="art-card ac-res fl"><div class="ac-ic blue"><svg class="i"><use href="#i-trendup"/></svg></div><div class="ac-body"><span>Результати</span><b>+162%</b></div></div>
+        <div class="art-card ac-eco fl d1"><div class="ac-ic green"><svg class="i"><use href="#i-money"/></svg></div><div class="ac-body"><span>Економія</span><b>-42% <small>витрат</small></b></div></div>
+        <div class="art-card ac-conv fl d2"><div class="ac-ic purple"><svg class="i"><use href="#i-users"/></svg></div><div class="ac-body"><span>Конверсії</span><b>+3.4x</b></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="stats-section">
+  <div class="container">
+    <div class="section-label">факти</div>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-main"><span class="stat-num" data-target="10">0</span><span class="stat-suffix">р.</span></div>
+        <div class="stat-label">виключно в Google Ads</div>
+        <div class="stat-hover-hint">— наведіть для деталей</div>
+        <div class="stat-detail">Не SMM, не таргет, не «все підряд». Тільки Google Ads з 2014 року. За цей час алгоритм змінювався десятки разів — і я знаю кожну з цих змін.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-main"><span class="stat-num amber" data-target="40">0</span><span class="stat-suffix" style="color:var(--amber)">%</span></div>
+        <div class="stat-label">бюджету зливається даремно в середньому</div>
+        <div class="stat-hover-hint">— наведіть для деталей</div>
+        <div class="stat-detail">При бюджеті 50 000 грн/міс — це 20 000 грн що йдуть нецільовим людям. Після аудиту ці гроші починають працювати на вас.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-main"><span class="stat-num red" data-target="9">0</span><span class="stat-suffix" style="color:var(--red)">/10</span></div>
+        <div class="stat-label">кабінетів мають критичні помилки</div>
+        <div class="stat-hover-hint">— наведіть для деталей</div>
+        <div class="stat-detail">Переглянув 200+ кабінетів. Лише 12% не мали жодної критичної помилки. Ваш — в якій групі? Аудит покаже чесно.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PAIN (5 errors) ============ -->
+<section class="pain-section">
+  <div class="container">
+    <div class="section-label">діагностика</div>
+    <h2 class="section-head">5 ПОМИЛОК, ЯКІ<br>КОШТУЮТЬ ВАМ <span class="grad-warm">ГРОШЕЙ</span></h2>
+    <p class="section-sub">Ці помилки з'їдають ваш бюджет щодня. Уникайте їх — масштабуйте прибуток.</p>
+    <div class="pain-grid">
+      <div class="pain-item">
+        <div class="pain-top"><div class="tile"><svg><use href="#i-target"/></svg></div><div class="pain-num">01</div></div>
+        <div class="pain-title">Широка відповідність без контролю</div>
+        <div class="pain-desc">Google показує рекламу на запити без жодного зв'язку з вашим продуктом. Ви платите за людей яким це не потрібно.</div>
+        <span class="pain-cost up">↑ до 35% злито</span>
+      </div>
+      <div class="pain-item">
+        <div class="pain-top"><div class="tile green"><svg><use href="#i-trash"/></svg></div><div class="pain-num">02</div></div>
+        <div class="pain-title">Відсутність або застарілі мінус-слова</div>
+        <div class="pain-desc">Без актуального списку мінус-слів бюджет витрачається на нерелевантний трафік. Найпоширеніша і найдорожча помилка.</div>
+        <span class="pain-cost up">↑ до 46% злито</span>
+      </div>
+      <div class="pain-item">
+        <div class="pain-top"><div class="tile red"><svg><use href="#i-robot"/></svg></div><div class="pain-num">03</div></div>
+        <div class="pain-title">Performance Max без сигналів</div>
+        <div class="pain-desc">PMax «на автопілоті» витрачає бюджет хаотично. Без правильних сигналів алгоритм оптимізується не туди.</div>
+        <span class="pain-cost dn">↓ до 38% злито</span>
+      </div>
+      <div class="pain-item">
+        <div class="pain-top"><div class="tile purple"><svg><use href="#i-network"/></svg></div><div class="pain-num">04</div></div>
+        <div class="pain-title">Партнерська мережа увімкнена</div>
+        <div class="pain-desc">За замовчуванням реклама іде на тисячах сайтів-партнерів з низькою якістю. Більшість навіть не знає що це включено.</div>
+        <span class="pain-cost dn">↓ до 28% злито</span>
+      </div>
+      <div class="pain-item">
+        <div class="pain-top"><div class="tile amber"><svg><use href="#i-alert"/></svg></div><div class="pain-num">05</div></div>
+        <div class="pain-title">Автоматичні розширення без перевірки</div>
+        <div class="pain-desc">Google додає розширення самостійно. Іноді вони ведуть не на ту сторінку або показують некоректну інформацію.</div>
+        <span class="pain-cost am">CTR падає на 15%</span>
+      </div>
+      <div class="pain-item pain-fix">
+        <div class="pain-top"><div class="tile"><svg><use href="#i-fix"/></svg></div><div class="pain-num" style="color:var(--blue-2)">FIX</div></div>
+        <div class="pain-title">Я знаходжу і виправляю все це</div>
+        <ul class="pain-fix-list">
+          <li><span class="ok">✓</span> що вимкнути</li>
+          <li><span class="ok">✓</span> що змінити</li>
+          <li><span class="ok">✓</span> в якій послідовності</li>
+        </ul>
+        <a href="#pricing" class="pain-fix-btn">Замовити аудит за 499 грн →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT YOU GET ============ -->
+<section class="get-section">
+  <div class="container">
+    <div class="section-label">що ви отримаєте</div>
+    <h2 class="section-head">ВІДЕО-РОЗБІР<br><span class="grad-blue">ВАШОГО КАБІНЕТУ</span></h2>
+    <p class="section-sub">Не загальні поради з YouTube. Конкретно ваш кабінет, ваші помилки, ваші гроші.</p>
+    <div class="get-grid">
+      <div class="get-card">
+        <div class="tile purple"><svg><use href="#i-film"/></svg></div><span class="num-chip">01</span>
+        <h3>Записаний відео-аудит</h3>
+        <p>Заходжу у ваш кабінет, записую екран і голосом пояснюю кожну помилку. Можна переглядати скільки завгодно разів.</p>
+        <span class="time-tag"><svg class="i" style="width:13px;height:13px"><use href="#i-clock"/></svg> ≈ 20 хвилин</span>
+      </div>
+      <div class="get-card">
+        <div class="tile amber"><svg><use href="#i-doc"/></svg></div><span class="num-chip">02</span>
+        <h3>Чек-лист виправлень</h3>
+        <p>Структурований список: що вимкнути сьогодні, що змінити цього тижня, що оптимізувати через місяць.</p>
+        <span class="time-tag amber"><svg class="i" style="width:13px;height:13px"><use href="#i-doc"/></svg> PDF-документ</span>
+      </div>
+      <div class="get-card">
+        <div class="tile green"><svg><use href="#i-money"/></svg></div><span class="num-chip">03</span>
+        <h3>Оцінка економії</h3>
+        <p>Конкретна цифра — скільки витрачається даремно щомісяця і яку ціну ліда можна отримати після виправлень.</p>
+        <span class="time-tag green"><svg class="i" style="width:13px;height:13px"><use href="#i-money"/></svg> У гривнях</span>
+      </div>
+    </div>
+    <div class="get-guarantee">
+      <div class="seal">100%<br>ГАРАНТІЯ</div>
+      <div>
+        <h4>Гарантія корисності</h4>
+        <p>Якщо після аудиту ви не знайдете жодної нової інформації про свій кабінет — поверну гроші без питань. За 3 роки аудитів такого не траплялось жодного разу.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BONUSES ============ -->
+<section class="bonus-section">
+  <div class="container">
+    <img class="section-art" src="assets/gift.png" alt="" aria-hidden="true" onerror="this.style.display='none'">
+    <div class="section-label">бонуси</div>
+    <h2 class="section-head">ЗАМОВЛЯЄТЕ АУДИТ —<br>ОТРИМУЄТЕ В <span class="grad-blue">ПОДАРУНОК</span></h2>
+    <div class="bonus-total"><svg class="i" style="width:18px;height:18px;color:var(--green-2)"><use href="#i-gift"/></svg> <span>Загальна вартість бонусів — <strong>5 250 грн</strong> &nbsp;·&nbsp; З аудитом — безкоштовно</span></div>
+
+    <div class="bonus-grid" id="bonusGrid">
+      <div class="bonus-card"><div class="tile"><svg><use href="#i-fix"/></svg></div><span class="bn">01</span><div><div class="bonus-type">PDF Чек-лист</div><h3>47 налаштувань Google Ads для щомісячної перевірки</h3><p>Структурований список по розділах: кампанії, ключі, оголошення, конверсії, аудиторії.</p><span class="bonus-val">+ 550 грн</span></div></div>
+      <div class="bonus-card"><div class="tile"><svg><use href="#i-book"/></svg></div><span class="bn">02</span><div><div class="bonus-type">PDF Гайд</div><h3>Як читати звіти Google Ads без технічного жаргону</h3><p>12 ключових метрик простою мовою для власника бізнесу. Що дивитись і на що реагувати.</p><span class="bonus-val">+ 554 грн</span></div></div>
+      <div class="bonus-card"><div class="tile purple"><svg><use href="#i-film"/></svg></div><span class="bn">03</span><div><div class="bonus-type">Відео-урок</div><h3>Performance Max — що він реально робить з бюджетом</h3><p>25-хвилинний розбір налаштувань PMax які зливають гроші і як їх приборкати.</p><span class="bonus-val">+ 860 грн</span></div></div>
+      <div class="bonus-card"><div class="tile amber"><svg><use href="#i-trash"/></svg></div><span class="bn">04</span><div><div class="bonus-type">Відео-урок</div><h3>Мінус-слова: список за 33 хвилини — тисячі гривень економії</h3><p>Покроковий відео-інструктаж з реальним прикладом. Від запитів до готового списку.</p><span class="bonus-val">+ 668 грн</span></div></div>
+
+      <div class="bonus-card bonus-hidden"><div class="tile green"><svg><use href="#i-table"/></svg></div><span class="bn">05</span><div><div class="bonus-type">Google Таблиця</div><h3>Шаблон щотижневого моніторингу рекламного кабінету</h3><p>Готова таблиця з формулами і підказками. Займає 10 хвилин на тиждень.</p><span class="bonus-val">+ 450 грн</span></div></div>
+      <div class="bonus-card bonus-hidden"><div class="tile red"><svg><use href="#i-alert"/></svg></div><span class="bn">06</span><div><div class="bonus-type">PDF Чек-лист</div><h3>10 ознак що підрядник по Google Ads не справляється</h3><p>Конкретні сигнали з поясненням. Перевірте свою агенцію за 5 хвилин.</p><span class="bonus-val">+ 308 грн</span></div></div>
+      <div class="bonus-card bonus-hidden"><div class="tile purple"><svg><use href="#i-robot"/></svg></div><span class="bn">07</span><div><div class="bonus-type">AI Відео-розбір</div><h3>Генерація оголошень для Google Ads за допомогою AI</h3><p>Як за 10 хвилин створити 50 варіантів заголовків і описів. Промпти, A/B тест.</p><span class="bonus-val">+ 768 грн</span></div></div>
+      <div class="bonus-card bonus-hidden"><div class="tile purple"><svg><use href="#i-chart"/></svg></div><span class="bn">08</span><div><div class="bonus-type">AI Відео-розбір</div><h3>Автоматичні звіти Google Ads через AI — без агенцій</h3><p>Як налаштувати щотижневий звіт який генерується сам. Інструменти, шаблони.</p><span class="bonus-val">+ 768 грн</span></div></div>
+      <div class="bonus-card bonus-hidden"><div class="tile purple"><svg><use href="#i-image"/></svg></div><span class="bn">09</span><div><div class="bonus-type">AI Відео-розбір</div><h3>Генерація банерів і креативів для Google Display через AI</h3><p>Від брифу до готового банера за 15 хвилин. Midjourney, Canva AI, розміри Google.</p><span class="bonus-val">+ 768 грн</span></div></div>
+      <div class="bonus-card bonus-hidden"><div class="tile purple"><svg><use href="#i-strategy"/></svg></div><span class="bn">10</span><div><div class="bonus-type">AI Відео-розбір</div><h3>AI-стратегія Google Ads: від аналізу ніші до медіаплану</h3><p>Як використати ChatGPT і Gemini щоб скласти стратегію за годину. Де межа AI.</p><span class="bonus-val">+ 1 300 грн</span></div></div>
+    </div>
+
+    <button class="btn-expand" id="bonusBtn" type="button" onclick="toggleBonuses()">
+      <span id="bonusBtnText">Відкрити всі бонуси (+6)</span><span class="arrow">▼</span>
+    </button>
+  </div>
+</section>
+
+<!-- ============ CASES ============ -->
+<section class="cases-section">
+  <div class="container">
+    <div class="section-label">результати клієнтів</div>
+    <h2 class="section-head">РЕАЛЬНІ КЕЙСИ <span class="grad-blue">ПІСЛЯ АУДИТУ</span></h2>
+    <p class="section-sub">Реальні клієнти, реальні цифри. Натисни «Читати далі» — побачиш повний розбір кейсу.</p>
+    <div class="rc-grid" id="rcGrid"></div>
+  </div>
+</section>
+
+<!-- ============ FOR WHOM ============ -->
+<section class="whom-section">
+  <div class="container">
+    <img class="section-art" src="assets/clipboard.png" alt="" aria-hidden="true" onerror="this.style.display='none'">
+    <div class="section-label">аудит підійде</div>
+    <h2 class="section-head">ЦЕ ДЛЯ <span class="grad-blue">ВАС</span>, ЯКЩО:</h2>
+    <div class="whom-grid">
+      <div class="whom-card"><div class="whom-check">✓</div><div><h3>Ви власник бізнесу</h3><p>Реклама запущена, гроші витрачаються, але заявок мало або вони дорогі — і незрозуміло чому.</p></div></div>
+      <div class="whom-card"><div class="whom-check">✓</div><div><h3>Вже використовуєте Google Ads</h3><p>Кабінет працює, але хочете перевірити чи немає прихованих зливів і точок зростання.</p></div></div>
+      <div class="whom-card"><div class="whom-check">✓</div><div><h3>Є штатний спеціаліст або агенція</h3><p>Хочете незалежний погляд зі сторони — оцінити якість роботи і поставити правильні питання.</p></div></div>
+      <div class="whom-card"><div class="whom-check">✓</div><div><h3>Витрачаєте від 15 000 грн/міс</h3><p>При такому бюджеті кожен відсоток оптимізації — це реальні гроші. Аудит окупається з першого тижня.</p></div></div>
+    </div>
+    <div class="whom-not">
+      <h4>Аудит не для вас, якщо:</h4>
+      <ul>
+        <li>Ви ще не запустили Google Ads — спочатку потрібне налаштування</li>
+        <li>Рекламний бюджет менше 5 000 грн/міс — ROI від аудиту буде мінімальний</li>
+        <li>Хочете «просто подивитися» без конкретного кабінету для аналізу</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about-section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-photo-wrap">
+        <div class="about-photo">
+          <img src="assets/photo.png" alt="Спеціаліст Google Ads" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="photo-placeholder" style="display:none">
+            <div class="pp-avatar"><svg width="46" height="46" viewBox="0 0 64 64"><use href="#gads"/></svg></div>
+            <span>Спеціаліст<br>Google Ads</span>
+          </div>
+        </div>
+        <div class="about-badge"><span class="num">10</span><span class="lbl">РОКІВ ДОСВІДУ</span></div>
+      </div>
+      <div class="about-content">
+        <div class="section-label">хто проводить аудит</div>
+        <h2>СПЕЦІАЛІСТ<br><span class="grad-blue">GOOGLE ADS</span></h2>
+        <p>Займаюсь Google Ads з 2014 року. За цей час переглянув сотні рекламних кабінетів — від e-commerce до медицини, від локального сервісу до міжнародного інфобізу. Веду TikTok де ділюсь реальними кейсами без прикрас.</p>
+        <div class="about-stats">
+          <div class="ab-stat"><b>10</b><span>років у Google Ads</span></div>
+          <div class="ab-stat"><b>200+</b><span>кабінетів проаналізовано</span></div>
+          <div class="ab-stat"><b>40к</b><span>грн/міс макс. економія</span></div>
+        </div>
+        <ul class="cred-list">
+          <li class="cred-item"><div class="cred-dot"></div><span><strong>10 років</strong> виключно в Google Ads — не «і SMM, і таргет»</span></li>
+          <li class="cred-item"><div class="cred-dot"></div><span>Проаналізував <strong>200+ кабінетів</strong> у різних нішах і бюджетах</span></li>
+          <li class="cred-item"><div class="cred-dot"></div><span>Середня економія після аудиту — <strong>від 8 000 до 40 000 грн/міс</strong></span></li>
+          <li class="cred-item"><div class="cred-dot"></div><span>Знаю всі актуальні зміни Google Ads <strong>2024–2025</strong> і як вони впливають на бюджет</span></li>
+          <li class="cred-item"><div class="cred-dot"></div><span>Веду TikTok про Google Ads — <strong>реальні кейси</strong>, без теорії і води</span></li>
+        </ul>
+        <div class="about-cta">
+          <a href="https://t.me/YOUR_TELEGRAM" class="btn-primary" target="_blank" rel="noopener"><svg class="i" style="width:18px;height:18px"><use href="#i-telegram"/></svg> Замовити аудит у спеціаліста</a>
+          <a href="https://instagram.com/YOUR_INSTAGRAM" class="btn-secondary" target="_blank" rel="noopener"><svg class="i" style="width:17px;height:17px"><use href="#i-instagram"/></svg> Instagram</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW ============ -->
+<section class="how-section">
+  <div class="container">
+    <img class="section-art" src="assets/clipboard.png" alt="" aria-hidden="true" onerror="this.style.display='none'">
+    <div class="section-label">як це працює</div>
+    <h2 class="section-head">4 КРОКИ — І<br>АУДИТ У ВАС</h2>
+    <div class="steps">
+      <div class="step"><div class="step-num">01</div><div class="step-conn"></div><div class="tile"><svg><use href="#i-send"/></svg></div><h3>Пишете мені</h3><p>В Telegram або Instagram. Вказуєте нішу та приблизний місячний бюджет.</p><div class="step-time"><svg class="i" style="width:13px;height:13px"><use href="#i-clock"/></svg> ≈ 2 хвилини</div></div>
+      <div class="step"><div class="step-num">02</div><div class="step-conn"></div><div class="tile purple"><svg><use href="#i-lock"/></svg></div><h3>Надаєте доступ</h3><p>Додаєте мій email як адміністратора Google Ads. Без паролів і передачі акаунту.</p><div class="step-time"><svg class="i" style="width:13px;height:13px"><use href="#i-clock"/></svg> ≈ 5 хвилин</div></div>
+      <div class="step"><div class="step-num">03</div><div class="step-conn"></div><div class="tile green"><svg><use href="#i-search"/></svg></div><h3>Я роблю аудит</h3><p>Записую відео-розбір і готую чек-лист виправлень. Протягом 24–48 годин.</p><div class="step-time"><svg class="i" style="width:13px;height:13px"><use href="#i-clock"/></svg> до 48 годин</div></div>
+      <div class="step"><div class="step-num">04</div><div class="tile"><svg><use href="#i-chart"/></svg></div><h3>Отримуєте результат</h3><p>Відео + PDF чек-лист. Впроваджуєте самостійно або замовляєте ведення.</p><div class="step-time"><svg class="i" style="width:13px;height:13px"><use href="#i-clock"/></svg> діє місяцями</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="pricing-section" id="pricing">
+  <div class="container">
+    <img class="section-art" src="assets/wallet.png" alt="" aria-hidden="true" onerror="this.style.display='none'">
+    <div class="section-label">вартість</div>
+    <h2 class="section-head">ОДИН РАЗ ЗАПЛАТИВ —<br>МІСЯЦЯМИ <span class="grad-blue">ЕКОНОМИШ</span></h2>
+    <p class="section-sub">Аудит окупається при першому ж збереженому бюджеті.</p>
+    <div class="pricing-card">
+      <div class="pricing-header">
+        <h3><svg width="22" height="22" viewBox="0 0 64 64"><use href="#gads"/></svg> Швидкий аудит Google Ads</h3>
+        <span class="dur">≈ 20 хв відео</span>
+      </div>
+      <div class="pricing-body">
+        <div class="price-display">
+          <span class="price-main">499</span>
+          <div><div class="price-currency">грн</div><div class="price-old">2 000 грн</div></div>
+        </div>
+        <p class="price-note">💡 Середня економія після аудиту — від 8 000 грн/міс. Аудит окупається вже з першого тижня.</p>
+        <ul class="includes-list">
+          <li class="includes-item"><span class="chk">✓</span> Відео-запис розбору вашого кабінету (≈ 20 хв)</li>
+          <li class="includes-item"><span class="chk">✓</span> Пошук 5 критичних помилок — знайдемо все що є</li>
+          <li class="includes-item"><span class="chk">✓</span> PDF чек-лист: що вимкнути і що змінити</li>
+          <li class="includes-item"><span class="chk">✓</span> Оцінка потенційної економії у гривнях</li>
+          <li class="includes-item"><span class="chk">✓</span> Відповіді на 2 питання після перегляду</li>
+          <li class="includes-item"><span class="chk">✓</span> 10 бонусів на суму 5 250 грн — безкоштовно</li>
+          <li class="includes-item"><span class="chk">✓</span> Гарантія повернення якщо нічого не знайдемо</li>
+        </ul>
+        <div class="pricing-ctas">
+          <a href="https://t.me/YOUR_TELEGRAM" class="btn-tg" target="_blank" rel="noopener"><svg class="i" style="width:18px;height:18px"><use href="#i-telegram"/></svg> Написати в Telegram — замовити аудит</a>
+          <a href="https://instagram.com/YOUR_INSTAGRAM" class="btn-ig" target="_blank" rel="noopener"><svg class="i" style="width:18px;height:18px"><use href="#i-instagram"/></svg> Написати в Instagram</a>
+        </div>
+        <p class="pricing-footnote">Обмежена кількість аудитів на тиждень · Оплата після підтвердження</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq-section">
+  <div class="container">
+    <div class="section-label">питання та відповіді</div>
+    <h2 class="section-head">FAQ</h2>
+    <div class="faq-layout">
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" type="button" onclick="toggleFaq(this)">Чи безпечно надавати доступ до кабінету?<span class="faq-arrow">+</span></button>
+          <div class="faq-a">Так. Ви додаєте мій email як читача — я можу лише переглядати дані, не можу змінювати налаштування або витрачати бюджет. Після аудиту одразу прибираєте доступ.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" onclick="toggleFaq(this)">Скільки часу займає аудит з мого боку?<span class="faq-arrow">+</span></button>
+          <div class="faq-a">Ваша участь — написати мені (2 хв) і надати доступ до кабінету (5 хв). Далі все роблю сам. Ніяких зустрічей і погоджень.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" onclick="toggleFaq(this)">Що якщо у мене немає критичних помилок?<span class="faq-arrow">+</span></button>
+          <div class="faq-a">Поверну гроші. За 3 роки аудитів це не траплялось жодного разу — але гарантія є. Навіть у кабінетах досвідчених фахівців знаходжу точки для оптимізації.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" onclick="toggleFaq(this)">У мене є агенція або спеціаліст. Чи варто?<span class="faq-arrow">+</span></button>
+          <div class="faq-a">Особливо варто. Незалежний аудит — це спосіб перевірити якість роботи без конфлікту інтересів. Отримаєте об'єктивну картину і зможете задати правильні питання підряднику.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" onclick="toggleFaq(this)">Скільки чекати на аудит після оплати?<span class="faq-arrow">+</span></button>
+          <div class="faq-a">Зазвичай 24–48 годин після надання доступу. У пікові тижні може бути до 72 годин — попереджу заздалегідь.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" onclick="toggleFaq(this)">Чи допоможете впровадити виправлення?<span class="faq-arrow">+</span></button>
+          <div class="faq-a">Так. Після аудиту можна замовити разове впровадження або постійне ведення кабінету. Але більшість клієнтів роблять це самостійно за чек-листом — він написаний зрозумілою мовою.</div>
+        </div>
+      </div>
+
+      <aside class="faq-side">
+        <div class="faq-help">
+          <div class="ic"><svg><use href="#i-headset"/></svg></div>
+          <h4>Залишились питання?</h4>
+          <p>Напишіть мені у Telegram — відповім швидко і без води.</p>
+          <a href="https://t.me/YOUR_TELEGRAM" class="btn-primary" target="_blank" rel="noopener" style="width:100%;justify-content:center">Зв'язатися →</a>
+        </div>
+        <div class="faq-why">
+          <h4>Чому обирають мене</h4>
+          <ul>
+            <li>10 років лише в Google Ads</li>
+            <li>200+ перевірених кабінетів</li>
+            <li>Конкретні дії, без теорії</li>
+            <li>Гарантія повернення коштів</li>
+            <li>Відповідь протягом години</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final-section">
+  <div class="container">
+    <h2>ЗУПИНІТЬ ЗЛИВ<br><span class="blue">СЬОГОДНІ</span></h2>
+    <p class="lead">Кожен день без аудиту — це день коли Google витрачає ваші гроші на нецільовий трафік.</p>
+    <div class="final-ctas">
+      <a href="https://t.me/YOUR_TELEGRAM" class="btn-primary" target="_blank" rel="noopener"><svg class="i" style="width:18px;height:18px"><use href="#i-telegram"/></svg> Написати в Telegram</a>
+      <a href="https://instagram.com/YOUR_INSTAGRAM" class="btn-secondary" target="_blank" rel="noopener"><svg class="i" style="width:17px;height:17px"><use href="#i-instagram"/></svg> Instagram DM</a>
+    </div>
+    <p class="final-price">Вартість — <span class="p">499 грн</span> &nbsp;·&nbsp; Відповідь протягом години</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 · Спеціаліст Google Ads · 10 років досвіду</p>
+  <div><a href="https://t.me/YOUR_TELEGRAM" target="_blank" rel="noopener">Telegram</a><a href="https://instagram.com/YOUR_INSTAGRAM" target="_blank" rel="noopener">Instagram</a></div>
+</footer>
+
+<!-- ============ CASE MODAL (Читати далі) ============ -->
+<div class="rc-modal" id="rcModal" aria-hidden="true">
+  <div class="rcm-backdrop" data-close></div>
+  <div class="rcm-dialog" role="dialog" aria-modal="true" aria-label="Детальний кейс">
+    <button class="rcm-close" type="button" data-close aria-label="Закрити">✕</button>
+    <div class="rcm-scroll" id="rcModalBody"></div>
+  </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
